@@ -1,0 +1,47 @@
+List of data files with source information:
+
+FOLDER: aco_results
+
+    2014_County-level_Fee_for_Service__FFS__Data_for_Shared_Savings_Program__SSP__Benchmark_Rebasing_PUF.csv
+    - SOURCE: https://data.cms.gov/Special-Programs-Initiatives-Medicare-Shared-Savin/2014-County-level-Fee-for-Service-FFS-Data-for-Sha/i2yb-rvkx
+    - DESCRIPTION: Contains Medicare spending data at the county level related to shared savings programs.
+    - UTILITY: May be helpful in evaluating impact of shared savings programs on a county
+    - NOTES: that this file appears less useful that the Medicare county level data stored in the 'County_All_Table.xlsx' file under the medicare_county_level data.
+
+    2014_Medicare_Shared_Savings_Program_Accountable_Care_Organizations___Participant.csv
+    - SOURCE: https://data.cms.gov/ACO/2014-Medicare-Shared-Savings-Program-Accountable-C/w3ec-v85z/data
+    - DESCRIPTION: Contains legal name and contact information for ACOs in 2014
+    - UTILITY: May be helpful in obtaining geographic information for comparison of ACO performance
+    - NOTES:
+
+    Medicare_Shared_Savings_Program_Accountable_Care_Organizations_Performance_Year_2014_Results.csv
+    - SOURCE: https://data.cms.gov/ACO/Medicare-Shared-Savings-Program-Accountable-Care-O/ucce-hhpu/data
+    - DESCRIPTION: 2014 ACO performance on financial benchmarks and quality metric reporting
+    - UTILITY: Evaluation of ACO performance
+    - NOTES:
+
+FOLDER: AHRF
+
+    SOURCE: http://ahrf.hrsa.gov/download.htm
+    This folder does not contain direct data dables, but was downloaded to access Medicare-level health spending data. The xlsx file 'County_All_Tables' was moved to the medicare_county_level folder, and this folder contains additional documentation and asc/sas downloadable files.
+
+FOLDER: county_primary_care_access
+
+    SOURCE: http://www.dartmouthatlas.org/tools/downloads.aspx#spending
+    This folder contains 8 downloaded xlsx files on primary care utilization metrics by county for 2003 - 2014. Downloaded from the Dartmouth Institute website.
+
+FOLDER: health_insurance
+
+    SAHIE_31JAN17_13_18_47_11.csv
+    - SOURCE: http://www.census.gov/did/www/sahie/data/interactive/sahie.html?s_appName=sahie&menu=grid_proxy
+    - DESCRIPTION: Contains data on the % uninsured by county for 2006 - 2014
+    - UTILITY: Use uninsured rate as a feature in predicting spending
+    - NOTES: Prior to downloading data as a csv, the years 2006 - 2014 have to be manually selected
+
+FOLDER: medicare_county_level
+
+    County_All_Tables.xls
+    - SOURCE: http://ahrf.hrsa.gov/download.htm
+    - DESCRIPTION:
+    - UTILITY:
+    - NOTES: This file was downloaded from the Area Health Resources File download page. The download was completed as a zip file from 'County-Level Data single downloadable zip file'. I believe this may be the data used by the Dartmouth Institute for their tracking of Medicare health spending. The xlsx file contains a useful data dictionary, but additional documentation may be found in the AHRF folder.
