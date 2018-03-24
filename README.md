@@ -68,3 +68,9 @@ The hierarchical model for both county level regressions and state level regress
 ![County Residuals](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/countyresid.png)
 
 ![State Residuals](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/stateresid.png)
+
+## Combining models
+
+![State and County Hierarchical Model](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/SCHgraph.png)
+
+***Hierarchical State and County RMSE= 0.185 or __$/Beneficiary***
