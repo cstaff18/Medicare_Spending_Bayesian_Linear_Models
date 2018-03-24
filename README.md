@@ -9,11 +9,11 @@ Brendan was able to construct a hierarchical linear model to estimate 2014 spend
 
 
 
-![State Wide Distribution](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/SWdist.png)
+![State Wide Distribution](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/SWdist.png)
 
 You can see that counties vary within a state.
 
-![Nation Wide Distribution](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/NWdist.png)
+![Nation Wide Distribution](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/NWdist.png)
 
 Cost/Beneficiary also vary across states as shown in the National Distribution plot.  My goal is to adapt Brendan's two tier linear model to a three tier model of Medicare spending.
 
@@ -24,20 +24,20 @@ Use bayesian linear regression models trained on 2007 - 2013 data for 5 states w
 
 #### Pooled Model
 For the first model we will create a baseline pooled model.  This creates 1 linear model and assumes there are no differences between states or individual counties.
-![pooled model](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/poolgraph.png)
+![pooled model](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/poolgraph.png)
 
 ***pool RMSE = 1.233 or 1452.11$/Beneficiary***
 
 
 #### Individual County Models
 Next we well create independent, individual models for each county.  This means one linear model for each of the ~200 counties included.
-![Individual County Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/IndCtygraph.png)
+![Individual County Models](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/IndCtygraph.png)
 
 ***Individual County RMSE = 0.601 or 708.91$/Beneficiary***
 
 #### Hierarchical County Models
 This approach creates a linear model for each county, however these individual models are no longer independent from each other.  Their individual parameters are influenced by the national distribution of parameters.
-![Hierarchical County Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/H1graph.png)
+![Hierarchical County Models](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/H1graph.png)
 
 ***Hierarchical County RMSE= 0.641 or 755.66$/Beneficiary***
 
@@ -47,13 +47,13 @@ You can see that this model doesn't actually improve the RMSE score relative to 
 Now on to the state models.  There appears to be structure in the state level medicare spending as well as shown by the Nation Wide Distribution of Spending Plot earlier.
 Here I created independent, individual models for each of the five states included and plotted their counties estimated 2014 cost/Beneficiary vs actual 2014 cost/Beneficiary.
 
-![Individual State Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/IndStategraph.png)
+![Individual State Models](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/IndStategraph.png)
 
 ***Individual State RMSE = 0.601 or 708.91$/Beneficiary***
 
 #### Hierarchical State Models
 Finally we have the 5 individual state models whose parameters are influenced by the national distribution of parameters.
-![Hierarchical State Models](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/H2graph.png)
+![Hierarchical State Models](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/H2graph.png)
 
 ***Hierarchical State RMSE = 0.421 or 495.80$/Beneficiary***
 
@@ -65,12 +65,12 @@ We can see that again the distribution of errors looks a bit more even especiall
 ## Did the Hierarchical Model improve predictions?
 The hierarchical model for both county level regressions and state level regressions moved the distribution of residuals closer to zero.  The hierarchical model for state level regressions also narrowed the distribution and improved the RMSE score.  Hierarchical modeling of county level regressions did not improve the RMSE score. Below show the distribution of residuals for the independent and hierarchical models.
 
-![County Residuals](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/countyresid.png)
+![County Residuals](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/countyresid.png)
 
-![State Residuals](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/stateresid.png)
+![State Residuals](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/stateresid.png)
 
 ## Combining models
 
-![State and County Hierarchical Model](https://github.com/cstaff18/County-Medicare-Spending/raw/master/images/SCHgraph.png)
+![State and County Hierarchical Model](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/SCHgraph.png)
 
-***Hierarchical State and County RMSE= 0.185 or __$/Beneficiary***
+***Hierarchical State and County RMSE= 0.185 or 217.87$/Beneficiary***
