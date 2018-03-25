@@ -24,6 +24,7 @@ Use bayesian linear regression models trained on 2007 - 2013 data for 5 states w
 
 #### Pooled Model
 For the first model we will create a baseline pooled model.  This creates 1 linear model and assumes there are no differences between states or individual counties.
+
 ![pooled model](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/poolgraph.png)
 
 ***pool RMSE = 1.233 or 1452.11$/Beneficiary***
@@ -31,12 +32,14 @@ For the first model we will create a baseline pooled model.  This creates 1 line
 
 #### Individual County Models
 Next we well create independent, individual models for each county.  This means one linear model for each of the ~200 counties included.
+
 ![Individual County Models](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/IndCtygraph.png)
 
 ***Individual County RMSE = 0.601 or 708.91$/Beneficiary***
 
 #### Hierarchical County Models
 This approach creates a linear model for each county, however these individual models are no longer independent from each other.  Their individual parameters are influenced by the national distribution of parameters.
+
 ![Hierarchical County Models](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/H1graph.png)
 
 ***Hierarchical County RMSE= 0.641 or 755.66$/Beneficiary***
@@ -70,7 +73,11 @@ The hierarchical model for both county level regressions and state level regress
 ![State Residuals](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/stateresid.png)
 
 ## Combining models
+Now we can create a three level hierarchical model that included information from the national, state and county level using that same bayesian framework.  Let's see how this model performs.
 
+National -> State -> County
 ![State and County Hierarchical Model](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/SCHgraph.png)
 
 ***Hierarchical State and County RMSE= 0.185 or 217.87$/Beneficiary***
+
+This model takes into the structure at the national, state, and county level and out performs all of our other models by a fair amount.
