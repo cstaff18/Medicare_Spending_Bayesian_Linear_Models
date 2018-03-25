@@ -76,8 +76,13 @@ The hierarchical model for both county level regressions and state level regress
 Now we can create a three level hierarchical model that included information from the national, state and county level using that same bayesian framework.  Let's see how this model performs.
 
 National -> State -> County
+
 ![State and County Hierarchical Model](https://github.com/cstaff18/Medicare_Spending_Bayesian_Linear_Models/raw/master/images/SCHgraph.png)
 
 ***Hierarchical State and County RMSE= 0.185 or 217.87$/Beneficiary***
 
 This model takes into the structure at the national, state, and county level and out performs all of our other models by a fair amount.
+
+
+
+Disclaimer: Data leakage in training set. Need to rerun models with updated data.
